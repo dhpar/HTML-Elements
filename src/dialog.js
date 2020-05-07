@@ -14,19 +14,22 @@ export default function dialog () {
         Vestibulum eget elit eget leo blandit dignissim. Pellentesque pellentesque rutrum laoreet. Donec vitae lobortis turpis. Suspendisse 
         quis maximus tortor. Maecenas bibendum turpis sit amet dolor vestibulum vestibulum.`
     };
-    const dialogInerHTML = `
-        <dialog ${options.isOpen} class="js-dialog-element dialog">
-            <h2>${options.title}</h2>
-            <p>${options.text}</p>
+
+    const dialogContent = document.append(options.title);
+    
+
+    const dialogTemplate = `
+        <dialog ${data.isOpen} class="js-dialog-element dialog">
+            <h2>${data.title}</h2>
+            <p>${data.text}</p>
             <form method="dialog">
                 <button>Cancel</button>
                 <button>Ok</button>
             </form>
-        </dialog>
-    `;
+        </dialog>`;
 
     dialogElement.addEventListener('click', ()=> {
-        bodyElement.insertAdjacentElement('beforeend', dialogInerHTML);
+        bodyElement.insertAdjacentHTML('beforeend', dialogTemplate);
     });
 
     const dialogOnDOM = () => document.querySelector('.js-dialog-element');
