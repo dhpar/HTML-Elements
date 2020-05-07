@@ -13,7 +13,7 @@ export default function dialog (options = {
     const bodyElement = document.querySelector('body');
     const dialogElement = document.querySelector(CLASSNAME.dialog);
     const dialogTemplate = `
-        <dialog ${options.isOpen} class="js-dialog-element dialog">
+        <dialog ${options.isOpen} class="js-dialog dialog">
             <h2>${options.title}</h2>
             <p>${options.text}</p>
             <form method="dialog">
@@ -23,6 +23,13 @@ export default function dialog (options = {
         </dialog>`;
     const insertDialog = () => bodyElement.insertAdjacentHTML('beforeend', dialogTemplate);
     
-    dialogElement.addEventListener('click', () => insertDialog());
-
+    dialogElement.addEventListener('click', () => { 
+        const dialog = document.querySelector('js-dialog');
+        
+        if(dialog){
+            dialog.setAttribute('open', '');
+        } else {
+            insertDialog();
+        } 
+    });
 };
