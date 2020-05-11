@@ -1,5 +1,4 @@
 export default function dialog (options = {
-    'isOpen': 'open',
     'title': 'Dialog title',
     'text': `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit ac risus consectetur condimentum.
     Vivamus in fringilla nibh. Etiam dictum semper augue ut tincidunt. Aliquam tempus nisl non tellus molestie condimentum. 
@@ -8,28 +7,31 @@ export default function dialog (options = {
     quis maximus tortor. Maecenas bibendum turpis sit amet dolor vestibulum vestibulum.`
 }) {
     const CLASSNAME = {
-        dialog: '.js-open-dialog'
+        dialogTrigger: '.js-open-dialog'
     };
     const bodyElement = document.querySelector('body');
-    const dialogElement = document.querySelector(CLASSNAME.dialog);
+    const dialogElement = document.querySelector(CLASSNAME.dialogTrigger);
     const dialogTemplate = `
-        <dialog ${options.isOpen} class="js-dialog dialog">
+        <div class="js-dialog dialog">
             <h2>${options.title}</h2>
             <p>${options.text}</p>
             <form method="dialog">
                 <button>Cancel</button>
                 <button>Ok</button>
             </form>
-        </dialog>`;
-    const insertDialog = () => bodyElement.insertAdjacentHTML('beforeend', dialogTemplate);
+        </div>`;
+    const insertDialog = () => { 
+        bodyElement.insertAdjacentHTML('beforeend', dialogTemplate);
+        return document.querySelector('.js-dialog');
+    };
     
-    dialogElement.addEventListener('click', () => { 
-        const dialog = document.querySelector('js-dialog');
+    
+    const openDialogHandler = () => {
+        const dialog = document.querySelector('.js-dialog') || insertDialog();
         
-        if(dialog){
-            dialog.setAttribute('open', '');
-        } else {
-            insertDialog();
-        } 
-    });
+        dialog.classList.contains("is-visible")?
+            dialog.classList.remove('is-visible') : dialog.classList.add('is-visible');
+    }
+    
+    dialogElement.addEventListener('click', openDialogHandler());
 };
