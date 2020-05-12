@@ -26,12 +26,12 @@ export default function dialog (options = {
     };
     
     
-    const openDialogHandler = () => {
+    const openDialogHandler = (event) => {
         const dialog = document.querySelector('.js-dialog') || insertDialog();
         
         dialog.classList.contains("is-visible")?
             dialog.classList.remove('is-visible') : dialog.classList.add('is-visible');
     }
     
-    dialogElement.addEventListener('click', openDialogHandler());
+    dialogElement.addEventListener('click', event => openDialogHandler(event));
 };
