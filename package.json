@@ -8,7 +8,9 @@
     "build": "yarn parcel build index.html"
   },
   "devDependencies": {
-    "parcel": "^2.0.0-alpha.3.2"
+    "parcel": "^2.0.0-alpha.3.2",
+    "postcss-nested": "^4.2.1",
+    "postcss-nesting": "^7.0.1"
   },
   "dependencies": {
     "autoprefixer": "^9.7.6",
