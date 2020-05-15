@@ -1,0 +1,47 @@
+:root {
+    --btn--bkg-color: #3e68ff;
+    --btn--text-color: #fff;
+    /* --btn--border: 1px solid black; */
+    --btn--padding: 0.75em 1.5em;
+    --btn--min-width: 10ch;
+    --btn--min-height: 44px;
+    --btn--font-family: 300 14px Arial;
+
+    --btn__hover--opacity: 0.7;
+}
+
+
+.btn {
+    font: var(--btn--font-family, inherit);
+    text-align: center;
+    line-height: 1.1;
+    
+    cursor: pointer;
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding: var(--btn--padding, 0);
+    min-width: var(--btn--min-width, 0);
+    min-height: var(--btn--min-heigh, 0);
+    
+    border: var(--btn--border, none);
+    background-color: var(--btn--bkg-color, transparent);
+    color: var(--btn--text-color, black);
+    
+    &:hover {
+        opacity: var(--btn__hover--opacity);
+    }
+    
+    &:focus {
+        outline-style: solid;
+        outline-color: transparent;
+        box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Windows hight contrast reset */
+    @media screen and (-ms-high-contrast: active) {
+        border: 2px solid currentcolor;
+    }
+}
