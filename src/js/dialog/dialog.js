@@ -7,12 +7,13 @@ export default function dialog (options = {
     quis maximus tortor. Maecenas bibendum turpis sit amet dolor vestibulum vestibulum.`
 }) {
     const CLASSNAME = {
-        dialogTrigger: '.js-open-dialog'
+        dialogTrigger: '.js-open-dialog',
+        isInvisible: 'is-invisible'
     };
     const bodyElement = document.querySelector('body');
     const dialogElement = document.querySelector(CLASSNAME.dialogTrigger);
     const dialogTemplate = `
-        <div class="js-dialog dialog">
+        <div class="js-dialog dialog is-invisible">
             <h2>${options.title}</h2>
             <p>${options.text}</p>
             <form method="dialog">
@@ -29,8 +30,8 @@ export default function dialog (options = {
     const openDialogHandler = (event) => {
         const dialog = document.querySelector('.js-dialog') || insertDialog();
         
-        dialog.classList.contains("is-visible")?
-            dialog.classList.remove('is-visible') : dialog.classList.add('is-visible');
+        dialog.classList.contains(CLASSNAME.isInvisible)?
+            dialog.classList.remove(CLASSNAME.isInvisible) : dialog.classList.add(CLASSNAME.isInvisible);
     }
     
     dialogElement.addEventListener('click', event => openDialogHandler(event));
