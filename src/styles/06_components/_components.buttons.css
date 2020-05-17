@@ -1,13 +1,7 @@
 :root {
-<<<<<<< HEAD:src/styles/06_components/_components.buttons.css
     --btn--bkg-color: var(--main-color-brand);
     --btn--text-color: #fff;
     
-=======
-    --btn--bkg-color: #3e68ff;
-    --btn--text-color: #fff;
-    /* --btn--border: 1px solid black; */
->>>>>>> master:src/styles/04_Elements/_buttons.css
     --btn--padding: 0.75em 1.5em;
     --btn--min-width: 10ch;
     --btn--min-height: 44px;
@@ -35,29 +29,14 @@
     border: var(--btn--border, none);
     background-color: var(--btn--bkg-color, transparent);
     color: var(--btn--text-color, black);
-<<<<<<< HEAD:src/styles/06_components/_components.buttons.css
     &:hover {
         opacity: var(--btn__hover--opacity);
     }
-=======
-    
-    &:hover {
-        opacity: var(--btn__hover--opacity);
-    }
-    
-    &:focus {
-        outline-style: solid;
-        outline-color: transparent;
-        box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.4);
-    }
-
->>>>>>> master:src/styles/04_Elements/_buttons.css
     /* Windows hight contrast reset */
     @media screen and (-ms-high-contrast: active) {
         border: 2px solid currentcolor;
     }
 }
-<<<<<<< HEAD:src/styles/06_components/_components.buttons.css
 
 /* .btn:hover {
     opacity: var(--btn__hover--opacity);
@@ -67,5 +46,3 @@
     outline: 0;
     box-shadow: 0 0 0 5px rgba(0, 123, 255, .5);
 }
-=======
->>>>>>> master:src/styles/04_Elements/_buttons.css

@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 
 
-=======
->>>>>>> master
 export default function dialog (options = {
     'title': 'Dialog title',
     'text': `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit ac risus consectetur condimentum.
@@ -22,18 +19,11 @@ export default function dialog (options = {
             <h2>${options.title}</h2>
             <p>${options.text}</p>
             <form method="dialog">
-<<<<<<< HEAD
                 <button class="btn">Cancel</button>
                 <button class="btn">Ok</button>
             </form>
         </div>
         <div id="modalOverlay" tabindex="-1"></div>`;
-=======
-                <button>Cancel</button>
-                <button>Ok</button>
-            </form>
-        </div>`;
->>>>>>> master
     const insertDialog = () => { 
         bodyElement.insertAdjacentHTML('beforeend', dialogTemplate);
         return document.querySelector('.js-dialog');
