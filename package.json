@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "htmlcomponents",
-=======
-  "name": "htmlComponents",
->>>>>>> master
   "version": "1.0.0",
   "main": "index.html",
   "license": "MIT",
@@ -12,21 +8,12 @@
     "build": "yarn parcel build index.html"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "parcel": "^2.0.0-alpha.3.2"
-=======
-    "parcel": "^2.0.0-alpha.3.2",
-    "postcss-nested": "^4.2.1",
-    "postcss-nesting": "^7.0.1"
->>>>>>> master
   },
   "dependencies": {
     "autoprefixer": "^9.7.6",
     "postcss-modules": "^2.0.0",
-<<<<<<< HEAD
     "postcss-nested": "^4.2.1",
-=======
->>>>>>> master
     "postcss-preset-env": "^6.7.0"
   }
 }
