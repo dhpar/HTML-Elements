@@ -29,20 +29,17 @@
     border: var(--btn--border, none);
     background-color: var(--btn--bkg-color, transparent);
     color: var(--btn--text-color, black);
+    
     &:hover {
         opacity: var(--btn__hover--opacity);
+    }
+    
+    &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 5px rgba(0, 123, 255, .5);
     }
     /* Windows hight contrast reset */
     @media screen and (-ms-high-contrast: active) {
         border: 2px solid currentcolor;
     }
-}
-
-/* .btn:hover {
-    opacity: var(--btn__hover--opacity);
-} */
-
-.btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 5px rgba(0, 123, 255, .5);
 }
