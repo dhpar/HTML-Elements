@@ -8,9 +8,17 @@ This is a repository of well crafted basic html, components, framework agnostic 
 4. Run `npm install` or `yarn install`, to install any missing local packages.
 5. Run `npm run start` or `yarn start`.
 6. (Optional) If you are using Visual Studio Code, there is a launch.json file in this project, which allows for VS Code debuging, just go to the sidebar icon for debuging and press run, this should open a new Chrome window with the site on it.
+<<<<<<< HEAD
+7. On Chrome, you should see a list of components and instructions on how to implement them (if not, I probably was too lazy or too forgetfull).
+=======
 7. On Chrome, you should see a list of components and instructions on how to implement them.
+>>>>>>> master
 
 Something not working? Please, feel free to create an issue on this app repository, thanks!
 
 ## Component list
+<<<<<<< HEAD
 1. **Modal dialog** (src/dialog/dialog.js) -> requires a trigger `<button>` or `<a>` or similar with `js-open-dialog` class in the html.
+=======
+1. **Modal dialog** (src/dialog/dialog.js) -> requires a trigger `<button>` or `<a>` or similar with `js-open-dialog` class in the html.
+>>>>>>> master

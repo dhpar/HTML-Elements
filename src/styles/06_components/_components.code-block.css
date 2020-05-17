@@ -1,0 +1,10 @@
+.code-block {
+    position: relative;
+    background-color:var(--grey-1);
+}
+
+.code-block__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
