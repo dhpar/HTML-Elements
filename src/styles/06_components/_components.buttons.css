@@ -1,7 +1,7 @@
 :root {
-    --btn--bkg-color: #3e68ff;
+    --btn--bkg-color: var(--main-color-brand);
     --btn--text-color: #fff;
-    /* --btn--border: 1px solid black; */
+    
     --btn--padding: 0.75em 1.5em;
     --btn--min-width: 10ch;
     --btn--min-height: 44px;
@@ -29,19 +29,20 @@
     border: var(--btn--border, none);
     background-color: var(--btn--bkg-color, transparent);
     color: var(--btn--text-color, black);
-    
     &:hover {
         opacity: var(--btn__hover--opacity);
     }
-    
-    &:focus {
-        outline-style: solid;
-        outline-color: transparent;
-        box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.4);
-    }
-
     /* Windows hight contrast reset */
     @media screen and (-ms-high-contrast: active) {
         border: 2px solid currentcolor;
     }
+}
+
+/* .btn:hover {
+    opacity: var(--btn__hover--opacity);
+} */
+
+.btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 5px rgba(0, 123, 255, .5);
 }

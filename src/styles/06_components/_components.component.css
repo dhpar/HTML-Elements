@@ -1,0 +1,24 @@
+.component {
+    background-color: var(--grey-1);
+}
+
+.component__block {
+    background-color: black;
+    color: white;
+}
+
+.component__code-container {
+    position: relative;
+    background-color:var(--grey-1);
+    color: black;
+}
+
+.component__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.component__code {
+    white-space: inherit;
+}

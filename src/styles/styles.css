@@ -4,10 +4,13 @@
 
 @import "./03_generic/_generic.reset.css";
 
-@import "./04_Elements/_buttons.css";
+@import "./04_base/_base.generics.css";
 
 @import "./05_objects/_objects.grid.css";
 
 @import "./06_components/_components.dialog.css";
+@import "./06_components/_components.buttons.css";
+@import "./06_components/_components.code-block.css";
+@import "./06_components/_components.component.css";
 
 @import "./07_utilities/_utilities.visibility.css";
