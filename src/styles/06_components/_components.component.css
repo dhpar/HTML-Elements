@@ -1,24 +1,51 @@
 .component {
-    background-color: var(--grey-1);
-}
+    --loc--component--boxShadow: var(--glo--boxShadow);
+    --loc--component--backgroundColor: var(--glo--color--lighgrey);
+    --loc--component__block--backgroundColor: black; 
+    --loc--component__block--color: white; 
 
-.component__block {
-    background-color: black;
-    color: white;
-}
 
-.component__code-container {
-    position: relative;
-    background-color:var(--grey-1);
-    color: black;
-}
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+        "explanation block"
+        "widget widget";
+    
+    background-color: var(--loc-component__primary--backgroundColor);
+    box-shadow: var(--loc--component--boxShadow);
 
-.component__button {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
+    &__explanation {
+        grid-row: explanation;
+        display: block;
 
-.component__code {
-    white-space: inherit;
+        & > * {
+            width: 100%;
+        }  
+    } 
+
+    &__block {
+        grid-row: block;
+        background-color: var(--loc--component__block--backgroundColor);
+        color: var(--loc--component__block--color);
+    }
+
+    &__widget {
+        grid-row: widget;
+        grid-column-start: -3;
+        grid-column-end: -1;
+    }
+
+    &__code-container {
+        position: relative;
+    }
+    
+    &__button {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    
+    &__code {
+        white-space: inherit;
+    }
 }

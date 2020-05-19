@@ -1,6 +1,6 @@
 .code-block {
     position: relative;
-    background-color:var(--grey-1);
+    background-color:var(--glo--color--lighgrey);
 }
 
 .code-block__button {
