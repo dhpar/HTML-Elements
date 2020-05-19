@@ -1,5 +1,3 @@
-
-
 export default function dialog (options = {
     'title': 'Dialog title',
     'text': `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit ac risus consectetur condimentum.
@@ -15,27 +13,35 @@ export default function dialog (options = {
     const bodyElement = document.querySelector('body');
     const dialogElement = document.querySelector(CLASSNAME.dialogTrigger);
     const dialogTemplate = `
-        <div class="js-dialog dialog is-invisible">
-            <h2>${options.title}</h2>
-            <p>${options.text}</p>
-            <form method="dialog">
-                <button class="btn">Cancel</button>
-                <button class="btn">Ok</button>
-            </form>
-        </div>
-        <div id="modalOverlay" tabindex="-1"></div>`;
+        <article class="js-dialog dialog">
+            <div class="dialog__modal">
+                <header class="dialog__header">
+                    <h2>${options.title}</h2>
+                    <button class="btn__close" title="Close button">&times;</button>
+                </header>
+                <div class="dialog__main">
+                    <p>${options.text}</p>
+                </div>
+                <footer class="dialog__footer">
+                    <button class="btn__cancel">Cancel</button>
+                    <button class="btn__ok">Ok</button>
+                </footer>
+            </div>
+            <div class="dialog__overlay"></div>
+        </section>`;
+
     const insertDialog = () => { 
         bodyElement.insertAdjacentHTML('beforeend', dialogTemplate);
         return document.querySelector('.js-dialog');
     };
     
     
-    const openDialogHandler = (event) => {
+    const openDialogHandler = () => {
         const dialog = document.querySelector('.js-dialog') || insertDialog();
         
-        dialog.classList.contains(CLASSNAME.isInvisible)?
-            dialog.classList.remove(CLASSNAME.isInvisible) : dialog.classList.add(CLASSNAME.isInvisible);
+        dialog.classList.contains("is-visible")?
+            dialog.classList.remove('is-visible') : dialog.classList.add('is-visible');
     }
     
-    dialogElement.addEventListener('click', event => openDialogHandler(event));
+    dialogElement.addEventListener('click', openDialogHandler());
 };
