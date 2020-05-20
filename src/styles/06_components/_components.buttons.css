@@ -1,5 +1,5 @@
 :root {
-    --btn--bkg-color: var(--main-color-brand);
+    --btn--bkg-color: var(--glo--mainColor);
     --btn--text-color: #fff;
     
     --btn--padding: 0.75em 1.5em;

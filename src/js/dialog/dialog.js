@@ -10,10 +10,10 @@ export default function dialog (options = {
         dialogTrigger: '.js-open-dialog',
         isInvisible: 'is-invisible'
     };
-    const bodyElement = document.querySelector('body');
-    const dialogElement = document.querySelector(CLASSNAME.dialogTrigger);
+    
+    const dialogTriggerElements = document.querySelectorAll(CLASSNAME.dialogTrigger);
     const dialogTemplate = `
-        <article class="js-dialog dialog">
+        <article class="js-dialog dialog is-invisible">
             <div class="dialog__modal">
                 <header class="dialog__header">
                     <h2>${options.title}</h2>
@@ -30,18 +30,19 @@ export default function dialog (options = {
             <div class="dialog__overlay"></div>
         </section>`;
 
-    const insertDialog = () => { 
-        bodyElement.insertAdjacentHTML('beforeend', dialogTemplate);
-        return document.querySelector('.js-dialog');
-    };
+    const insertDialog = element => element.insertAdjacentHTML('afterend', dialogTemplate);
     
-    
-    const openDialogHandler = () => {
-        const dialog = document.querySelector('.js-dialog') || insertDialog();
+    const openDialogHandler = e => {
+        let dialog = null;
         
-        dialog.classList.contains("is-visible")?
-            dialog.classList.remove('is-visible') : dialog.classList.add('is-visible');
+        // Check if next element is the dialog (so we don't create a new one each time we click), we use the != intentionaly to checck for null and undefined.
+        if (e.target.nextElementSibling != null && !e.target.nextElementSibling.matches('.js-dialog')) {
+            insertDialog(e.target);
+        }
+        dialog = e.target.nextElementSibling;
+        dialog && dialog.classList.contains(CLASSNAME.isInvisible)? 
+            dialog.classList.remove(CLASSNAME.isInvisible) : dialog.classList.add(CLASSNAME.isInvisible);
     }
     
-    dialogElement.addEventListener('click', openDialogHandler());
+    dialogTriggerElements.forEach(dialogTriggerElement => dialogTriggerElement.addEventListener('click', e => openDialogHandler(e)));
 };
