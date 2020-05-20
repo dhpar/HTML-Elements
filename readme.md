@@ -1,7 +1,9 @@
 # Html components
 This is a repository of well crafted basic accessible html, components, framework agnostic and non dependant of any other library, so they are as modular as possible. My main objective is to 
 
-# Quickstart
+[Styles](src/styles/styles.md)
+
+## Quickstart
 1. Install [Node](https://nodejs.org/en/) (currently using 14.1.0, other versions have not been tested)
 2. Install Yarn globaly - [Windows](https://classic.yarnpkg.com/en/docs/install/#windows-stable) | [Mac](https://classic.yarnpkg.com/en/docs/install/#mac-stable) | [Ubuntu](https://classic.yarnpkg.com/en/docs/install/#debian-stable)
 3. Clone the repository into your local, by clicking on the clone button. Or download specific file with - `git archive --remote=https://github.com/Trifit/componets.git HEAD README.md`.
@@ -14,3 +16,5 @@ Something not working? Please, feel free to create an issue on this app reposito
 
 ## Component list
 1. **Modal dialog** (src/dialog/dialog.js) -> requires a trigger `<button>` or `<a>` or similar with `js-open-dialog` class in the html.
+
+

@@ -7,30 +7,34 @@
   </head>
   <body>
     <main>
-        <h1>HTML COMPONENTS</h1>
-        <section>
-          <article class="component">
-            <h2>Modal dialog</h2>
-            <p>An accessible and modern modal, in order to implement it:</p>
-            <ol>
-              <li>Include the HTML</li>
-              <li>Include dialog.js</li>
-              <li>(optional) Include _dialog.css</li>
-            </ol>
-            <button class="js-open-dialog btn">Open dialog</button>
-          </article>
-          <aside class="component__block">
-            <h3>HTML</h3>
-            <div class="component__code-container">
-              <button class='component__button'>📋</button>
-              <pre class="component__code">
-                <code>
-                    <button class="js-open-dialog btn">Open dialog</button>
-                </code>
-              </pre>
-            </div>
-          </aside>
+      <h1>HTML COMPONENTS</h1>
+      <article class="component">
+        <section class="component__explanation">
+          <h2>Modal dialog</h2>
+          <p>In order to implement this widget you'll need to create a clickable element (link or button) with a class named "js-open-dialog" in your html and include the script dialog.js in your html</p>
+          <p>The js script will create a div with the modal inmideatly bellow the button.</p>
+          <h3>Options</h3>
+          <ul>
+            <li>Include class to convert modal into a tooltip directly attached to the clickable element</li>
+          </ul>
+          <h3>Sources</h3>
+          <a href="https://github.com/gdkraus/accessible-modal-dialog">Fully accessible modal</a>
         </section>
+        <aside class="component__block">
+          <h3>HTML</h3>
+          <div class="component__code-container">
+            <button class='component__button'>📋</button>
+            <pre class="component__code">
+              <code>
+                <button class="js-open-dialog btn">Open dialog</button>
+              </code>
+            </pre>
+          </div>
+        </aside>
+        <div class="component__widget">
+          <button class="js-open-dialog btn">Open dialog</button>
+        </div>
+      </article>
     </main>
   </body>
   <script type="module" src="src/js/app.js"></script>

@@ -1,6 +1,7 @@
 @import "./01_settings/_settings.box-model.css";
 @import "./01_settings/_settings.colors.css";
 @import "./01_settings/_settings.text.css";
+@import "./01_settings/_settings.bkg-and-borders.css";
 
 @import "./03_generic/_generic.reset.css";
 
