@@ -5,8 +5,8 @@ body {
     font-family: sans-serif;
 }
 
-article {
-    padding: var( --settings--padding);
+main {
+    max-width: 1280px;
 }
 
 aside {

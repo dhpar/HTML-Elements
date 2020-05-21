@@ -1,7 +1,7 @@
 .component {
     --loc--component--boxShadow: var(--glo--boxShadow);
     --loc--component--backgroundColor: var(--glo--color--lighgrey);
-    --loc--component__block--backgroundColor: black; 
+    --loc--component__block--backgroundColor: var(--glo--codeColor); 
     --loc--component__block--color: white; 
 
 
@@ -17,7 +17,7 @@
     &__explanation {
         grid-row: explanation;
         display: block;
-
+        padding: var( --settings--padding);
         & > * {
             width: 100%;
         }  
@@ -33,6 +33,8 @@
         grid-row: widget;
         grid-column-start: -3;
         grid-column-end: -1;
+        padding: var( --settings--padding);
+        background-color: var(--loc--component__block--backgroundColor);
     }
 
     &__code-container {
