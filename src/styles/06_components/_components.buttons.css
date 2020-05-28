@@ -1,18 +1,5 @@
-:root {
-    --btn--bkg-color: var(--glo--mainColor);
-    --btn--text-color: #fff;
-    
-    --btn--padding: 0.75em 1.5em;
-    --btn--min-width: 10ch;
-    --btn--min-height: 44px;
-    --btn--font-family: 300 14px Arial;
-
-    --btn__hover--opacity: 0.7;
-}
-
-
 .btn {
-    font: var(--btn--font-family, inherit);
+    
     text-align: center;
     line-height: 1.1;
     
@@ -22,6 +9,30 @@
     align-items: center;
     justify-content: center;
     
+    &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 5px rgba(0, 123, 255, .5);
+    }
+    /* Windows hight contrast reset */
+    @media screen and (-ms-high-contrast: active) {
+        border: 2px solid currentcolor;
+    }
+}
+
+.btn__primary {
+    --btn--bkg-color: var(--glo--mainColor);
+    --btn--text-color: #fff;
+    
+    --btn--padding: 0.75em 1.5em;
+    --btn--min-width: 10ch;
+    --btn--min-height: 44px;
+    --btn--font-family: 300 14px Arial;
+    --btn--border: 1px solid var(--btn--bkg-color);
+
+    --btn__hover--opacity: 0.7;
+
+    font: var(--btn--font-family, inherit);
+    
     padding: var(--btn--padding, 0);
     min-width: var(--btn--min-width, 0);
     min-height: var(--btn--min-heigh, 0);
@@ -30,16 +41,64 @@
     background-color: var(--btn--bkg-color, transparent);
     color: var(--btn--text-color, black);
     
-    &:hover {
+    &:hover, 
+    &:focus {
         opacity: var(--btn__hover--opacity);
     }
+}
+
+.btn__close {
+    --btn--bkg-color: transparent;
+    --btn--text-color: red;
     
+    --btn--padding: 0;
+    --btn--min-width: 2ch;
+    --btn--min-height: 0;
+    --btn--font-family: 300 1.5em Arial;
+    
+    --btn__hover--opacity: 0.7;
+
+    font: var(--btn--font-family, inherit);
+    
+    padding: var(--btn--padding, 0);
+    min-width: var(--btn--min-width, 0);
+    min-height: var(--btn--min-heigh, 0);
+    
+    border: var(--btn--border, none);
+    background-color: var(--btn--bkg-color, transparent);
+    color: var(--btn--text-color, black);
+    
+    &:hover,
     &:focus {
-        outline: 0;
-        box-shadow: 0 0 0 5px rgba(0, 123, 255, .5);
+        background-color: red;
+        color: white;
     }
-    /* Windows hight contrast reset */
-    @media screen and (-ms-high-contrast: active) {
-        border: 2px solid currentcolor;
+}
+
+.btn__secondary {
+    --btn--text-color: var(--glo--secColor);
+    --btn--border: 1px solid currentcolor;
+
+    --btn--padding: 0.75em 1.5em;
+    --btn--min-width: 10ch;
+    --btn--min-height: 44px;
+    --btn--font-family: 300 14px Arial;
+    
+    --btn__hover--opacity: 0.7;
+
+    font: var(--btn--font-family, inherit);
+    
+    padding: var(--btn--padding, 0);
+    min-width: var(--btn--min-width, 0);
+    min-height: var(--btn--min-heigh, 0);
+    
+    border: var(--btn--border, none);
+    background-color: var(--btn--bkg-color, transparent);
+    color: var(--btn--text-color, black);
+    
+    &:hover,
+    &:focus {
+        background-color: var(--btn--text-color);
+        color: white;
     }
 }

@@ -8,18 +8,11 @@
   <body>
     <main>
       <h1>HTML COMPONENTS</h1>
+      
       <article class="component">
         <section class="component__explanation">
-          <h2>Modal dialog</h2>
-          <h3>Explanation</h3>
-          <p>In order to implement this widget you'll need to create a clickable element (link or button) with a class named "js-open-dialog" in your html and include the script dialog.js in your html</p>
-          <p>The js script will create a div with the modal inmideatly bellow the button.</p>
-          <h3>Options</h3>
-          <ul>
-            <li>Include class to convert modal into a tooltip directly attached to the clickable element</li>
-          </ul>
-          <h3>Sources</h3>
-          <a href="https://github.com/gdkraus/accessible-modal-dialog">Fully accessible modal</a>
+          <h2>Buttons</h2>
+          <p>Implemented buttons are button tags, if other kind of tag is needed, might need to be adapted</p>
         </section>
         <aside class="component__block">
           <h3>Code</h3>
@@ -33,8 +26,48 @@
           </div>
         </aside>
         <div class="component__widget">
-          <h3>Component</h3>
-          <button class="js-open-dialog btn">Open dialog</button>
+          <h3 class="component__widget__title">Component</h3>
+          <div class="component__widget__container">
+            <button class="btn btn__primary">Primary</button>
+            <button class="btn btn__secondary">Secondary</button>
+            <button class="btn btn__close">&times;</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="component">
+        <section class="component__explanation">
+          <h2>Modal dialog</h2>
+          <h3>Explanation</h3>
+          <p>In order to implement this widget you'll need to create a clickable element (link or button) with a class named "js-open-dialog" in your html and include the script dialog.js in your html</p>
+          <p>The js script will create a div with the modal inmideatly bellow the button.</p>
+          <h3>Options</h3>
+          <ul>
+            <li>Include class to convert modal into a tooltip directly attached to the clickable element</li>
+          </ul>
+          <h3>Sources</h3>
+          <ul>
+            <li><a href="https://github.com/gdkraus/accessible-modal-dialog">Fully accessible modal</a></li>
+            <li><a href="https://allyjs.io/data-tables/focusable.html">List of focusable and tabable elements</a></li>
+            <li><a href="https://www.w3.org/TR/wai-aria-practices/examples/dialog-modal/dialog.html">W3.org accessible modal</a></li>
+            <li><a href="https://pattern-library.dequelabs.com/composites/modals">Deque modal</a></li>
+            <li><a href="https://www.youtube.com/watch?v=JS68faEUduk">Google dev youtube accessible modal</a></li>
+          </ul>
+        </section>
+        <aside class="component__block">
+          <h3>Code</h3>
+          <div class="component__code-container">
+            <button class='component__button'>📋</button>
+            <pre class="component__code">
+              <code>
+                <button class="js-open-dialog btn">Open dialog</button>
+              </code>
+            </pre>
+          </div>
+        </aside>
+        <div class="component__widget">
+          <h3 class="component__widget__title">Component</h3>
+          <button class="js-open-dialog btn btn__primary">Open dialog</button>
         </div>
       </article>
     </main>
