@@ -23,6 +23,6 @@ Something not working? Please, feel free to create an issue on this app reposito
 * Performant.
 
 ## Component list
-1. **Modal dialog** (src/dialog/dialog.js) -> requires a trigger `<button>` or `<a>` or similar with `js-open-dialog` class in the html.
+1. **Modal dialog** [src/dialog/dialog.js](https://github.com/Trifit/HTML-Elements/tree/9d319835534967021b7937e516ebad8e8c05ec99/src/js/dialog) -> requires a trigger `<button>` or `<a>` or similar with `js-open-dialog` class in the html.
 
 
