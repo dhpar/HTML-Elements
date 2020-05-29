@@ -1,6 +1,7 @@
 # Html components
 This is a repository of well crafted basic accessible html, components, framework agnostic and non dependant of any other library, so they are as modular as possible. My main objective is to create a set of reusable widgets that can be used in a wide range of tecnology stack.
 
+## Contents
 [Styles](src/styles/styles.md)
 
 ## Quickstart
