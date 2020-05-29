@@ -1,5 +1,5 @@
 # Html components
-This is a repository of well crafted basic accessible html, components, framework agnostic and non dependant of any other library, so they are as modular as possible. My main objective is to 
+This is a repository of well crafted basic accessible html, components, framework agnostic and non dependant of any other library, so they are as modular as possible. My main objective is to create a set of reusable widgets that can be used in a wide range of tecnology stack.
 
 [Styles](src/styles/styles.md)
 
@@ -13,6 +13,13 @@ This is a repository of well crafted basic accessible html, components, framewor
 7. On Chrome, you should see a list of components and instructions on how to implement them (if not, I probably was too lazy or too forgetfull).
 
 Something not working? Please, feel free to create an issue on this app repository, thanks!
+
+## Requirements
+* Accessible.
+* Framework agnostic.
+* Internet Explorer 11 compatible (so done with this).
+* Responsive.
+* Performant.
 
 ## Component list
 1. **Modal dialog** (src/dialog/dialog.js) -> requires a trigger `<button>` or `<a>` or similar with `js-open-dialog` class in the html.
