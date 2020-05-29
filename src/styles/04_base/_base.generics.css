@@ -3,6 +3,7 @@ body {
     flex: 0 1 1024px;
     justify-content: center;
     font-family: sans-serif;
+    color: var(--glo--textColor);
 }
 
 main {
@@ -10,20 +11,36 @@ main {
 }
 
 aside {
-    padding: var( --settings--padding);
+    padding: var(--settings--padding);
 }
 
 code {
-    padding: var( --settings--padding);
+    padding: var(--settings--padding);
     display: block;
 }
 
 p{
     color: #333;
+    margin: 0 0 1em 0;
 }
 
 h1 {
     letter-spacing: 5px;
     font-weight: 100;
     color: var(--main-color-brand);
+    margin: 0 0 1em 0;
+}
+
+h2 {
+    font-family: Trebuchet MS;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    margin: 0 0 1em 0;
+}
+
+h3 {
+    letter-spacing: 0.25em;
+    font-weight: 600;
+    font-family: Trebuchet MS;
+    margin: 0 0 1em 0;
 }

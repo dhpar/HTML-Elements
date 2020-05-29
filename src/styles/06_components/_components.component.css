@@ -3,7 +3,7 @@
     --loc--component--backgroundColor: var(--glo--color--lighgrey);
     --loc--component__block--backgroundColor: var(--glo--codeColor); 
     --loc--component__block--color: white; 
-
+    --loc--component--margin-bottom: 3em;
 
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -13,6 +13,7 @@
     
     background-color: var(--loc-component__primary--backgroundColor);
     box-shadow: var(--loc--component--boxShadow);
+    margin-bottom: var(--loc--component--margin-bottom);
 
     &__explanation {
         grid-row: explanation;
@@ -30,11 +31,23 @@
     }
 
     &__widget {
+        color: white;
         grid-row: widget;
         grid-column-start: -3;
         grid-column-end: -1;
         padding: var( --settings--padding);
         background-color: var(--loc--component__block--backgroundColor);
+        
+        &__title{
+            margin: 0 0 1em 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        &__container {
+            display: flex;
+            
+        }
     }
 
     &__code-container {

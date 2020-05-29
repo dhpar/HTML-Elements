@@ -1,12 +1,16 @@
 .dialog {
+    --loc--dialog__modal--color: var(--glo--textColor);
+
     position: fixed;
-    z-index: 999;
+    z-index: auto;
     top: 0;
     left: 0;
     height: 100vh;
-
+    
     &__modal {
+        padding: var( --settings--padding);
         background: white;
+        color: var(--loc--dialog__modal--color);
         top: 50%;
         left: 50%;
         position: fixed;
@@ -22,6 +26,7 @@
     &__header {
         display: flex;
         justify-content: space-between;
+        align-items: baseline;
     }
     
 }
