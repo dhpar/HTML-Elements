@@ -1,10 +1,9 @@
 :root {
-    --glo--mainColor: #1a69a4;
-    --glo--secColor: #1aa436;
+    --glo--mainColor: hsl(200, 100%, 30%);
+    --glo--secColor: hsl(100, 100%, 40%);
 
     --glo--codeColor: #272c34;
     --glo--textColor: #33475B;
 
     --glo--lighgrey: #F5F6FB;
-
 }

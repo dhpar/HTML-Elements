@@ -1,69 +1,78 @@
-export default function dialog (template) {
-    const CLASSNAME = {
-        dialogTrigger: '.js-open-dialog',
-        isInvisible: 'is-invisible'
-    };
-    const dialogTriggers = document.querySelectorAll(CLASSNAME.dialogTrigger);
-    const keynumber = {
-        space: 32,
-        enter: 13,
-        esc: 27,
-        tab: 9
-    }
+import defaults from "./Dialog.defaults";
+import template from "./Dialog.template";
+import focusableString from "../utils/focussableElements";
+import keynumber from "../utils/keyNumbers.js";
+
+const dialog = () => {
 
     
-    const createDialog = element => {
-        element.insertAdjacentHTML('afterend', template);
-        
-        const dialogElement = element.nextElementSibling.matches('.js-dialog') && element.nextElementSibling;
-        // We create an event for each clossing action needed
-        dialogElement.querySelectorAll('.js-close-dialog').forEach(closingElement => {
-            closingElement.addEventListener('click', e => toggleDialog(dialogElement));
-            closingElement.addEventListener('click', e => onKeyPressed(e, dialogElement))
-        });
-        
-        dialogElement.addEventListener('keydown', e => onKeyPressed(e, dialogElement));
+
+
+    const CLASSNAME = {
+        dialogTrigger: '.js-open-dialog',
+        dialogOverlay: '.js-dialog-overlay',
+        isInvisible: 'is-invisible'
     };
-    
-    const toggleDialog = dialog => dialog.classList.toggle(CLASSNAME.isInvisible);
-            
-    const trapFocus = (dialogElement, event) => {
-        
-        const focusableElements = dialogElement.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-        const firstFocusable = focusableElements[0];
-        const lastFocusable = focusableElements[focusableElements.length - 1];
-        
-        firstFocusable.focus();   
-    }
+    let focusableElements = null;
+
+    const allFocusableElements = element => element.querySelectorAll(focusableString);
+
+    const dialogTriggers = document.querySelectorAll(CLASSNAME.dialogTrigger);
     
     dialogTriggers.forEach(dialogTrigger => dialogTrigger.addEventListener('click', e => onClick(e)));
     dialogTriggers.forEach(dialogTrigger => dialogTrigger.addEventListener('keydown', e => onKeyPressed(e)));
+    dialogTriggers.forEach(dialogTrigger => dialogTrigger.addEventListener('close', e => onClose(e)));
     
-    const onClick = e => {
-        // Check if next element is the dialog (so we don't create a new one each time we click), we use the != intentionaly to checck for null and undefined.
-        const dialogExists = e.target.nextElementSibling != null && e.target.nextElementSibling.matches('.js-dialog');
-        
-        // Create a dialog only if doesn't previously exists, otherwise toggle visibility css class
-        if (!dialogExists){
-            createDialog(e.target);
+    const open = triggerElement => {
+        if (triggerElement.nextElementSibling == null || !triggerElement.nextElementSibling.matches('.js-dialog')) {
+            triggerElement.insertAdjacentHTML('afterend', template(defaults));
+            const dialogElement = triggerElement.nextElementSibling;
+            focusableElements = allFocusableElements(dialogElement);
+            focusableElements[0].focus();
+            dialogElement.querySelector('.js-dialog-overlay').addEventListener('click', e => toggleDialog(dialogElement));
+            dialogElement.addEventListener('keydown', e => onKeyPressed(e, dialogElement));
         } else {
-            toggleDialog(e.target.nextElementSibling);
+            toggleDialog(triggerElement.nextElementSibling);
         }
-
-        trapFocus(e.target.nextElementSibling);
-    }
+    };
     
-    const onKeyPressed = (e, dialogElement) => {
-        // if escape pressed
-        if (e.which === keynumber.esc) {
-            toggleDialog(dialogElement);    
+    const toggleDialog = dialog => {
+        dialog.classList.toggle(CLASSNAME.isInvisible);
+        document.body.classList.toggle('no-overflow');
+    };
+
+    const onClick = e => open(e.target);
+
+    const onKeyPressed = e => {
+        const firstFocusElement = focusableElements[0];
+        const lastFocusElement = focusableElements[focusableElements.length - 1];
+        switch (e.which) {
+            case keynumber.esc:
+                toggleDialog(e.target.closest('.js-dialog'));
+                // .classList.toggle(CLASSNAME.isInvisible);
+                break;
+                
+            case keynumber.tab:
+                if(document.activeElement === lastFocusElement){
+                    e.preventDefault();
+                    firstFocusElement.focus();
+                }
+                break;
+            case e.shiftKey && keynumber.tab:
+                if(document.activeElement === firstFocusElement){
+                    e.preventDefault();
+                    lastFocusElement.focus();
+                }
+                break;
+            case keynumber.space:
+            case keynumber.enter:
+                open(e);
+                break;
         }
-        if (e.which === keynumber.tab) {
-            trapFocus(dialogElement, e);
-        }
-        if (e.which === keynumber.space || e.which === keynumber.enter) {
-            onClick(e);
-        }
+    }
+    const onClose = e => {
+        toggleDialog()
     }
 };
-        
+
+export default dialog;

@@ -1,3 +1,7 @@
 .is-invisible {
     display: none;
 }
+
+.no-overflow {
+    overflow: hidden;
+}

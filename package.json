@@ -16,11 +16,11 @@
     "build": "yarn parcel build index.html"
   },
   "devDependencies": {
-    "parcel": "^2.0.0-alpha.3.2"
+    "parcel": "^2.0.0-alpha.3.2",
+    "parcel-plugin-nuke-dist": "^1.0.1"
   },
   "dependencies": {
     "autoprefixer": "^9.7.6",
-    "parcel-plugin-clean-dist": "0.0.6",
     "postcss-modules": "^2.0.0",
     "postcss-nested": "^4.2.1",
     "postcss-preset-env": "^6.7.0"
